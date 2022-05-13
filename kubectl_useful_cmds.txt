@@ -1,0 +1,5 @@
+#To see only warnings in events
+kubectl get events --field-selector type=Warning
+
+#To see events sorted by timestamp
+kubectl get events --sort-by=.metadata.creationTimestamp
