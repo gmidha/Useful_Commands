@@ -1,0 +1,5 @@
+#Dry run the helm install
+helm install demo ./demo --dry-run
+
+#To set the values using cli and overrides the vaules.yml during dry run
+helm install demo ./demo --dry-run --set image.tag=latest
