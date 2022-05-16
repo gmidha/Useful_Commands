@@ -6,3 +6,6 @@ helm install demo ./demo --dry-run --set image.tag=latest
 
 #Using multiple set values
 helm install demo ./demo --dry-run --set image.tag=latest --set service.type=Nodeport
+
+#Assuming newvalues.yml in the current directory has the values that we want to override while installing helm charts with dry-run
+helm install demo ./demo -f ./newvalues.yml --dry-run
