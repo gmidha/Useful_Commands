@@ -12,3 +12,9 @@ helm install demo ./demo -f ./newvalues.yml --dry-run
 
 #To see the values in helm chart demo
  helm show values ./demo
+
+#To see the status of chart demo
+helm status demo
+
+#To delete the chart demo
+helm delete demo
