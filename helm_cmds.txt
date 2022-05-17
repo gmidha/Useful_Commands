@@ -9,3 +9,6 @@ helm install demo ./demo --dry-run --set image.tag=latest --set service.type=Nod
 
 #Assuming newvalues.yml in the current directory has the values that we want to override while installing helm charts with dry-run
 helm install demo ./demo -f ./newvalues.yml --dry-run
+
+#To see the values in helm chart demo
+ helm show values ./demo
