@@ -1,0 +1,2 @@
+#To see the repo url for a checked out repo.
+git config --get remote.origin.url
