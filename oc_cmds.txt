@@ -1,2 +1,5 @@
 #To extract password for Argocd admin from Openshift
 oc -n openshift-gitops extract secrets/openshift-gitops-cluster --to=-
+
+#To open port forwarding from a pod to local machine
+oc port-forward pod_name local_port:pod_port
