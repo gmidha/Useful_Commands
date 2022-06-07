@@ -3,3 +3,6 @@ oc -n openshift-gitops extract secrets/openshift-gitops-cluster --to=-
 
 #To open port forwarding from a pod to local machine
 oc port-forward pod_name local_port:pod_port
+
+#to Get the list of subscriptions in a namespace such as openshift-storage
+oc get subs -n openshift-storage
