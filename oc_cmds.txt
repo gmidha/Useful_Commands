@@ -6,3 +6,6 @@ oc port-forward pod_name local_port:pod_port
 
 #to Get the list of subscriptions in a namespace such as openshift-storage
 oc get subs -n openshift-storage
+
+#To describe a subscription such as odf-operator in namespace: openshift-storage
+oc describe sub odf-operator -n openshift-storage
