@@ -1,0 +1,5 @@
+#To login into Argocd cluster, where abc.datamulticloud.com is the DNS of Argo UI.
+argocd login abc.datamulticloud.com
+
+#To List the argocd cluster
+argocd cluster list
