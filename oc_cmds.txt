@@ -25,6 +25,9 @@ oc get operatorgroups,subscriptions,clusterserviceversions -n openshift-local-st
 #To get the storage classes
 oc get storageclasses -o custom-columns='NAME:metadata.name,PROVISIONER:provisioner'
 
+#To get localvolumediscoveryresults
+oc get localvolumediscoveryresults -o custom-columns='Name:metadata.name,PATH:status.discoveredDevices[*].path'
+
 #to Get the list of subscriptions in a namespace such as openshift-storage
 oc get subs -n openshift-storage
 
