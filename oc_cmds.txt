@@ -1,8 +1,29 @@
+#ARGOCD Category
 #To extract password for Argocd admin from Openshift
 oc -n openshift-gitops extract secrets/openshift-gitops-cluster --to=-
 
 #To open port forwarding from a pod to local machine
 oc port-forward pod_name local_port:pod_port
+
+#GENERAL Category
+#To see console url from cli
+oc whoami --show-console
+
+#STORAGE Category
+#List Worker nodes
+oc get nodes -l node-role.kubernetes.io/worker=
+
+#Label Worker nodes with label: cluster.ocs.openshift.io/openshift-storage=
+oc label nodes -l node-role.kubernetes.io/worker= cluster.ocs.openshift.io/openshift-storage=
+
+#To get storagecluster and pods in openshift-storage project
+oc get storagecluster,pods -n openshift-storage
+
+#To get operatorgroup, subs and csvs in openshift-local-storage/openshift-storage project
+oc get operatorgroups,subscriptions,clusterserviceversions -n openshift-local-storage
+
+#To get the storage classes
+oc get storageclasses -o custom-columns='NAME:metadata.name,PROVISIONER:provisioner'
 
 #to Get the list of subscriptions in a namespace such as openshift-storage
 oc get subs -n openshift-storage
@@ -12,3 +33,4 @@ oc describe sub odf-operator -n openshift-storage
 
 #Inspect the desired Operator to verify its supported install modes and available channels. Example is of odf-operator.
 oc describe packagemanifests odf-operator -n openshift-marketplace
+
