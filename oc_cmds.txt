@@ -1,6 +1,7 @@
 #ARGOCD Category
 #To extract password for Argocd admin from Openshift
 oc -n openshift-gitops extract secrets/openshift-gitops-cluster --to=-
+oc -n multicloud-gitops-hub extract secrets/hub-gitops-cluster --to=-
 
 #To open port forwarding from a pod to local machine
 oc port-forward pod_name local_port:pod_port
@@ -25,8 +26,11 @@ oc get operatorgroups,subscriptions,clusterserviceversions -n openshift-local-st
 #To get the storage classes
 oc get storageclasses -o custom-columns='NAME:metadata.name,PROVISIONER:provisioner'
 
+#To see the localvolumediscovery in openshift-local-storage namespace
+oc get localvolumediscovery -n openshift-local-storage
+
 #To get localvolumediscoveryresults
-oc get localvolumediscoveryresults -o custom-columns='Name:metadata.name,PATH:status.discoveredDevices[*].path'
+oc get localvolumediscoveryresults -o custom-columns='Name:metadata.name,PATH:status.discoveredDevices[*].path' -n openshift-local-storage
 
 #to Get the list of subscriptions in a namespace such as openshift-storage
 oc get subs -n openshift-storage
