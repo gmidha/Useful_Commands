@@ -1,0 +1,5 @@
+#To display the Azure account details
+az account show
+
+#To create a Service account with Contributor role and different scopes, to get scope: go to resource group and click on JSON view in Overview blade.
+az ad sp create-for-rbac -n "MyApp" --role Contributor --scopes /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup1}
