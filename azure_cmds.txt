@@ -1,3 +1,4 @@
+#Link to configure Azure account: https://docs.openshift.com/container-platform/4.10/installing/installing_azure/installing-azure-account.html
 #To display the Azure account details
 az account show
 
