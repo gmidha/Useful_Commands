@@ -1,4 +1,8 @@
 #ARGOCD Category
+#To get ArgoCD route
+oc -n openshift-gitops get route
+oc -n multicloud-gitops-hub get route
+
 #To extract password for Argocd admin from Openshift
 oc -n openshift-gitops extract secrets/openshift-gitops-cluster --to=-
 oc -n multicloud-gitops-hub extract secrets/hub-gitops-cluster --to=-
