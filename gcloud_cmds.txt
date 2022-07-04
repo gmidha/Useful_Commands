@@ -7,17 +7,7 @@ gcloud info
 #To enable api through cli, eg:
 gcloud services enable domains.googleapis.com
 gcloud services enable dns.googleapis.com
-
-#Create a service account in Google Cloud
-gcloud iam service-accounts create some-account-name --display-name="My Service Account"
-
-#To list and filter the api through cli, eg:
-gcloud services list --available | grep domain
-
-
-
-#Register a domain in GCloud
-gcloud domains registrations register gcpazaws.com --contact-data-from-file=contacts.yaml
+gcloud services enable compute.googleapis.com
 
 #contacts.yaml in above cli:
 allContacts:
@@ -30,3 +20,15 @@ allContacts:
     locality: 'Mountain View'
     addressLines: ['1600 Amphitheatre Pkwy']
     recipients: ['Jane Doe']
+    
+#Register a DNS
+RANDOM_PREFIX=`openssl rand -hex 2`
+
+#Register a domain in GCloud
+gcloud domains registrations register gcpazaws.com --contact-data-from-file=contacts.yaml
+
+#Create a service account in Google Cloud
+gcloud iam service-accounts create some-account-name --display-name="My Service Account"
+
+#To list and filter the api through cli, eg:
+gcloud services list --available | grep domain
