@@ -6,6 +6,7 @@ gcloud info
 
 #To enable api through cli, eg:
 gcloud services enable domains.googleapis.com
+gcloud services enable dns.googleapis.com
 
 #Create a service account in Google Cloud
 gcloud iam service-accounts create some-account-name --display-name="My Service Account"
