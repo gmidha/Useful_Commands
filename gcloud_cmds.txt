@@ -10,6 +10,13 @@ gcloud services enable dns.googleapis.com
 gcloud services enable compute.googleapis.com
 gcloud services enable cloudapis.googleapis.com
 gcloud services enable cloudresourcemanager.googleapis.com
+gcloud services enable iam.googleapis.com
+gcloud services enable iamcredentials.googleapis.com
+gcloud services enable servicemanagement.googleapis.com
+gcloud services enable serviceusage.googleapis.com
+gcloud services enable storage-api.googleapis.com
+gcloud services enable storage-component.googleapis.com
+gcloud services enable cloudbilling.googleapis.com
 
 #contacts.yaml in above cli:
 allContacts:
