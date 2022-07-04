@@ -1,3 +1,9 @@
+#Setup GCloud cli
+gcloud init
+
+#Get Gloud info
+gcloud info
+
 #Create a service account in Google Cloud
 gcloud iam service-accounts create some-account-name --display-name="My Service Account"
 
