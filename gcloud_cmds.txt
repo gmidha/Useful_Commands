@@ -4,14 +4,16 @@ gcloud init
 #Get Gloud info
 gcloud info
 
+#To enable api through cli, eg:
+gcloud services enable domains.googleapis.com
+
 #Create a service account in Google Cloud
 gcloud iam service-accounts create some-account-name --display-name="My Service Account"
 
 #To list and filter the api through cli, eg:
 gcloud services list --available | grep domain
 
-#To enable api through cli, eg:
-gcloud services enable domains.googleapis.com
+
 
 #Register a domain in GCloud
 gcloud domains registrations register gcpazaws.com --contact-data-from-file=contacts.yaml
