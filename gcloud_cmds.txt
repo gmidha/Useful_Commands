@@ -8,6 +8,7 @@ gcloud info
 gcloud services enable domains.googleapis.com
 gcloud services enable dns.googleapis.com
 gcloud services enable compute.googleapis.com
+gcloud services enable cloudapis.googleapis.com
 
 #contacts.yaml in above cli:
 allContacts:
