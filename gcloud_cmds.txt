@@ -40,6 +40,8 @@ gcloud domains registrations register gcpazaws.com --contact-data-from-file=cont
 gcloud iam service-accounts create some-account-name --display-name="My Service Account"
 gcloud projects add-iam-policy-binding ${gcp_project} --member "serviceAccount:some-account-name@${gcp_project}.iam.gserviceaccount.com" --
 role "roles/owner"
+#Create key required for OCP Install.
+gcloud iam service-accounts keys create ${HOME}/.gcp/osServiceAccount.json --iam-account ${serviceaccountname}@${projectname}.iam.gserviceaccount.com
 
 #To list and filter the api through cli, eg:
 gcloud services list --available | grep domain
