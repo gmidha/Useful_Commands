@@ -44,5 +44,8 @@ role "roles/owner"
 #Create key required for OCP Install.
 gcloud iam service-accounts keys create ${HOME}/.gcp/osServiceAccount.json --iam-account ${serviceaccountname}@${projectname}.iam.gserviceaccount.com
 
+#Command to create install yaml file for GCP
+./openshift-install create install-config --dir <installation_directory> 
+
 #To list and filter the api through cli, eg:
 gcloud services list --available | grep domain
