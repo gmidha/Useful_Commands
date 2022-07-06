@@ -18,7 +18,7 @@ gcloud services enable storage-api.googleapis.com
 gcloud services enable storage-component.googleapis.com
 gcloud services enable cloudbilling.googleapis.com
 
-#contacts.yaml in above cli:
+#contacts.yaml in above cli, update your email id and other details:
 allContacts:
   email: 'example@example.com'
   phoneNumber: '+1.8005550123'
@@ -34,7 +34,8 @@ allContacts:
 RANDOM_PREFIX=`openssl rand -hex 2`
 
 #Register a domain in GCloud
-gcloud domains registrations register gcpazaws.com --contact-data-from-file=contacts.yaml
+gcloud domains registrations register ${RANDOM_PREFIX}openshift.com --contact-data-from-file=contacts.yaml
+gcloud dns managed-zones create openshift4-domain --dns-name gcp.${RANDOM_PREFIX}openshift.com --description "Openshift 4 Domain"
 
 #Create a service account in Google Cloud
 gcloud iam service-accounts create some-account-name --display-name="My Service Account"
