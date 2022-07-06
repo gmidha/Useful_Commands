@@ -17,6 +17,7 @@ gcloud services enable serviceusage.googleapis.com
 gcloud services enable storage-api.googleapis.com
 gcloud services enable storage-component.googleapis.com
 gcloud services enable cloudbilling.googleapis.com
+gcloud services enable deploymentmanager.googleapis.com
 
 #contacts.yaml in above cli, update your email id and other details:
 allContacts:
