@@ -37,6 +37,9 @@ RANDOM_PREFIX=`openssl rand -hex 2`
 #Register a domain in GCloud
 gcloud domains registrations register ${RANDOM_PREFIX}openshift.com --contact-data-from-file=contacts.yaml
 gcloud dns managed-zones create openshift4-domain --dns-name gcp.${RANDOM_PREFIX}openshift.com --description "Openshift 4 Domain"
+gcloud dns managed-zones describe openshift4-domain
+#Get the NS records and update those in Domain Register in Google Cloud for the above created domain.
+
 
 #Create a service account in Google Cloud
 gcloud iam service-accounts create some-account-name --display-name="My Service Account"
