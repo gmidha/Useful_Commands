@@ -1,0 +1,12 @@
+#Install Docker on Amazon Linux
+sudo yum update
+sudo yum search docker
+sudo yum install docker
+#Add group membership for the default ec2-user so you can run all docker commands without using the sudo command:
+sudo usermod -a -G docker ec2-user
+id ec2-user
+newgrp docker
+#Enable docker service at AMI boot time:
+sudo systemctl enable docker.service
+#Start the Docker service:
+sudo systemctl start docker.service
