@@ -1,0 +1,5 @@
+#Create cluster
+kind create cluster --name kind1
+
+#Use cluster kind1
+kubectl cluster-info --context kind-kind1
