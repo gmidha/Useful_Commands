@@ -45,3 +45,6 @@ oc describe sub odf-operator -n openshift-storage
 #Inspect the desired Operator to verify its supported install modes and available channels. Example is of odf-operator.
 oc describe packagemanifests odf-operator -n openshift-marketplace
 
+#To get a list of ClusterOperators
+oc get clusteroperators.config.openshift.io
+
