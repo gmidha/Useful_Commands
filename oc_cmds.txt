@@ -10,9 +10,6 @@ oc -n multicloud-gitops-hub extract secrets/hub-gitops-cluster --to=-
 #To open port forwarding from a pod to local machine
 oc port-forward pod_name local_port:pod_port
 
-#GENERAL Category
-#To see console url from cli
-oc whoami --show-console
 
 #STORAGE Category
 #List Worker nodes
@@ -45,6 +42,14 @@ oc describe sub odf-operator -n openshift-storage
 #Inspect the desired Operator to verify its supported install modes and available channels. Example is of odf-operator.
 oc describe packagemanifests odf-operator -n openshift-marketplace
 
+
+#GENERAL Category
+#To see console url from cli
+oc whoami --show-console
+
 #To get a list of ClusterOperators
 oc get clusteroperators.config.openshift.io
 
+#To get a clusterversion 
+oc get clusterversion
+oc describe clusterversion
