@@ -77,3 +77,6 @@ oc cp /local/path my-pod:/container/path
 
 #port forward
 oc port-forward my-pod-name local-port:remote-port
+
+#To increase verbosity of logs
+oc get pod --loglevel 6
