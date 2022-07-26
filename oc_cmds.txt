@@ -60,3 +60,7 @@ oc adm node-logs -u kubelet my-node-name
 #To display journallogs
 oc adm node-logs node-name
 
+#To log into node
+oc debug node/my-node-name
+$chroot /host
+$systemctl is-active kubelet
