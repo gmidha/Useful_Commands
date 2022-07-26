@@ -65,3 +65,6 @@ oc debug node/my-node-name
 $chroot /host
 $systemctl is-active kubelet
 $crictl ps
+
+#We can also debug deployments and run deployment as root
+oc debug deployment/my-deployment-name --as-root
