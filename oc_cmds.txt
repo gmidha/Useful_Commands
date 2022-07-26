@@ -47,6 +47,9 @@ oc describe packagemanifests odf-operator -n openshift-marketplace
 #To see console url from cli
 oc whoami --show-console
 
+#To get a token
+oc whoami -t
+
 #To get a list of ClusterOperators
 oc get clusteroperators.config.openshift.io
 
