@@ -68,3 +68,12 @@ $crictl ps
 
 #We can also debug deployments and run deployment as root
 oc debug deployment/my-deployment-name --as-root
+
+#opens a shell inside pod to run shell commands interactively and non interactively
+oc rsh my-pod-name
+
+#copy files to pod or use oc rsync to copy multiple files
+oc cp /local/path my-pod:/container/path
+
+#port forward
+oc port-forward my-pod-name local-port:remote-port
