@@ -64,3 +64,4 @@ oc adm node-logs node-name
 oc debug node/my-node-name
 $chroot /host
 $systemctl is-active kubelet
+$crictl ps
