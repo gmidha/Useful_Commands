@@ -53,3 +53,10 @@ oc get clusteroperators.config.openshift.io
 #To get a clusterversion 
 oc get clusterversion
 oc describe clusterversion
+
+#To Get the logs of systemd units on nodes
+oc adm node-logs -u kubelet my-node-name
+
+#To display journallogs
+oc adm node-logs node-name
+
