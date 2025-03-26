@@ -42,11 +42,11 @@ gcloud dns managed-zones describe openshift4-domain
 
 
 #Create a service account in Google Cloud
-gcloud iam service-accounts create some-account-name --display-name="My Service Account"
-gcloud projects add-iam-policy-binding ${gcp_project} --member "serviceAccount:some-account-name@${gcp_project}.iam.gserviceaccount.com" --
+gcloud iam service-accounts create ${SVC_ACNT} --display-name="My Service Account"
+gcloud projects add-iam-policy-binding ${gcp_project} --member "serviceAccount:${SVC_ACNT}@${GCP_PROJECT}.iam.gserviceaccount.com" --
 role "roles/owner"
 #Create key required for OCP Install.
-gcloud iam service-accounts keys create ${HOME}/.gcp/osServiceAccount.json --iam-account ${serviceaccountname}@${projectname}.iam.gserviceaccount.com
+gcloud iam service-accounts keys create ${HOME}/.gcp/osServiceAccount.json --iam-account ${SVC_ACNT}@${GCP_PROJECT}.iam.gserviceaccount.com
 
 #Command to create install yaml file for GCP
 ./openshift-install create install-config --dir <installation_directory> 
