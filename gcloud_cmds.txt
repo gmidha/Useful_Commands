@@ -40,10 +40,11 @@ gcloud dns managed-zones create openshift4-domain --dns-name gcp.${RANDOM_PREFIX
 gcloud dns managed-zones describe openshift4-domain
 #Get the NS records and update those in Domain Register in Google Cloud for the above created domain.
 
-
+export SVC_ACNT=gmidha-sa
+export GCP_PROJECT=
 #Create a service account in Google Cloud
 gcloud iam service-accounts create ${SVC_ACNT} --display-name="My Service Account"
-gcloud projects add-iam-policy-binding ${gcp_project} --member "serviceAccount:${SVC_ACNT}@${GCP_PROJECT}.iam.gserviceaccount.com" --
+gcloud projects add-iam-policy-binding ${GCP_PROJECT} --member "serviceAccount:${SVC_ACNT}@${GCP_PROJECT}.iam.gserviceaccount.com" --
 role "roles/owner"
 #Create key required for OCP Install.
 gcloud iam service-accounts keys create ${HOME}/.gcp/osServiceAccount.json --iam-account ${SVC_ACNT}@${GCP_PROJECT}.iam.gserviceaccount.com
